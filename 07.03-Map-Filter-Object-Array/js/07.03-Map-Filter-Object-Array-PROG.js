@@ -1,4 +1,4 @@
-// 07.05 Lab - START
+// 07.03 Lab - PROG
 
 // Array Callback Methods Review
 // use forEach(), map(), filter(), sort(), find() and reduce() methods to 

@@ -1,4 +1,4 @@
-// Lesson 07.04 - PROG
+// Lesson 07.04
 // **array.reduce()**
 
 // Array Method: Array.reduce()

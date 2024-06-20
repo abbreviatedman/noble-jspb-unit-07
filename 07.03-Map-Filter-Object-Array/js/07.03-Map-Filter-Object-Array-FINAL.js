@@ -1,4 +1,4 @@
-// 07.05 Lab - FINAL
+// 07.03 Lab - FINAL
 
 // Array Callback Methods Review
 // use forEach(), map(), filter(), sort(), find() and reduce() methods to 

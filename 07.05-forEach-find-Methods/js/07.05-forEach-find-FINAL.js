@@ -1,4 +1,4 @@
-// Lesson 07.03 - PROG
+// Lesson 07.03
 
 // array.forEach(function(item))
 // The forEach() method is called on an array. 
