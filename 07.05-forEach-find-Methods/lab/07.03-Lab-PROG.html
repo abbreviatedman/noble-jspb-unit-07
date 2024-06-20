@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07.03 Lab</title>
+
+    <style>
+      body {
+        background-color: #555;
+        color: #555;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      .container {
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 10px;
+        border: 3px solid #999;
+        width: 650px;
+        height: 65vh;
+        background-color: #ccc;
+      }
+
+      img {
+        width: 90px;
+        float: left;
+        padding-right: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <h1>
+          JS Lab 07.03 <br />forEach <br />vs. map-filter chaining
+          <br />refactoring if-else with ternary
+        </h1>
+
+      </div>
+    </div>
+
+    <script>
+      const scrabbleValues = {
+        A: 1,
+        B: 3,
+        C: 3,
+        D: 2,
+        E: 1,
+        F: 4,
+        G: 2,
+        H: 4,
+        I: 1,
+        J: 8,
+        K: 5,
+        L: 1,
+        M: 3,
+        N: 1,
+        O: 1,
+        P: 3,
+        Q: 10,
+        R: 1,
+        S: 1,
+        T: 1,
+        U: 1,
+        V: 4,
+        W: 4,
+        X: 8,
+        Y: 4,
+        Z: 10,
+        " ": 0,
+        "-": 0,
+      };
+
+      const fruits = [
+        "apple",
+        "apricot",
+        "banana",
+        "blueberry",
+        "cherry",
+        "cranberry",
+        "grape",
+        "kiwi",
+        "lemon",
+        "lime",
+        "mango",
+        "orange",
+        "papaya",
+        "peach",
+        "pear",
+        "pineapple",
+        "plum",
+        "raspberry",
+        "strawberry",
+        "tangerine",
+        "watermelon",
+      ];
+
+      const furniture = [
+        "Desk",
+        "Chair",
+        "Bed",
+        "Table",
+        "Sofa",
+        "Card Table",
+        "Tea Table",
+        "Chest",
+        "Dresser",
+        "Sideboard",
+        "Demi-lune Table",
+      ];
+
+      const animals = [
+        "bunny",
+        "cat",
+        "dog",
+        "elephant",
+        "frog",
+        "giraffe",
+        "hedgehog",
+        "iguana",
+        "lynx",
+        "manatee",
+      ];
+
+      const vowels = "aeiou";
+
+      // 1. From fruits, furniture, animals -- or any other array of strings -- make an object array, where each item is an object of 3 properties.
+      /* {
+                name: 'apple',
+                startsWithVowel: true,
+                scrabbleScore: 9
+            },
+        */
+
+      // scrabbleScore equals the sum of the value of each letter, as found in the scrabbleValues object
+
+      // 2. Refactor the above to use a function that takes an array as its
+      //    input/argument and returns the object array -- so same as 1, but
+      //    with a function
+
+      // map()
+
+      // 3. Given nums array, use map() to interate the array.
+      //   Cube the even numbers and square the odds.
+      //   Save the result to new array called numz
+      //   new array has same number of items as original, so map() is good for this
+      const nums = [4, 3, 14, 5, 7, 9, 8, 6, 17, 10, 12, 15];
+
+      // find() method
+
+      // 4. Write a function that takes in an array of strings and returns the first items that starts with a vowel. Also return its index in an object:
+      // { first_vowel_word:"elephant", index: 3 }
+    </script>
+  </body>
+</html>
