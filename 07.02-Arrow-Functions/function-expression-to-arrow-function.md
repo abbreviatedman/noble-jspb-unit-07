@@ -5,7 +5,7 @@
 // function. Function Expressions return a value, giving the variable something to store:
 
 const greet = function(name) {
-    return “Hello “ + name
+return “Hello “ + name
 }
 console.log(greet(“Jane”)) // Hello Jane
 
@@ -33,11 +33,11 @@ console.log(calculateQuotient(15, 5)); // 3
 // An anonymous function can also be attached to an event property, called on an object, as in this button onclick.
 
 myButton.onclick = function() {
-	alert('you clicked me');
+alert('you clicked me');
 }
 
 myImg.onmouseover = function() {
-	myImg.style.filter = “brightness(2)”;
+myImg.style.filter = “brightness(2)”;
 }
 
 //Please read this carefully and complete the exercises
@@ -48,27 +48,25 @@ myImg.onmouseover = function() {
 //1. create a function called minus that accepts 3 parameters
 //2. return the sum of all 3 parameters
 function add(param1, param2, param3) {
-    return param1 + param2 + param3;
-  }
-  
-  //3. create a function called multiply that accepts 3 parameters
-  //4. return the multiplied of all 3 parameters
-  function multiply(param1, param2, param3) {
-    return param1 * param2 * param3;
-  }
-  
-  //4. create a function called divide that accepts 3 parameters
-  //5. add all the parameters and divide the sum by 2
-  function divide(param1, param2, param3) {
-    return (param1 + param2 + param3) / 2;
-  }
-  
+return param1 + param2 + param3;
+}
 
+//3. create a function called multiply that accepts 3 parameters
+//4. return the multiplied of all 3 parameters
+function multiply(param1, param2, param3) {
+return param1 _ param2 _ param3;
+}
+
+//4. create a function called divide that accepts 3 parameters
+//5. add all the parameters and divide the sum by 2
+function divide(param1, param2, param3) {
+return (param1 + param2 + param3) / 2;
+}
 
 ◦ anonymous function attached to an event:
 
-    btn.onclick = function() { 
-        alert('You clicked the button!') 
+    btn.onclick = function() {
+        alert('You clicked the button!')
     }
 
 • built in libraries (date, random)
@@ -87,9 +85,7 @@ function that produces no “side-effects”:
 EXERCISE:
 
 Declare a function with two parameters, `num1` and `num2`.
-   The function call passes in two arguments, both numbers.
-   The function does the following math:
-    - If the `num1` is greater than `num2`, subtract the `num2` number from `num1`
-    - If `num2` is greater, add the numbers together.
-    Return the answer.
-    Run the function twice, once with the numbers being subtracted, the other with the numbers being added.
+The function call passes in two arguments, both numbers.
+The function does the following math: - If the `num1` is greater than `num2`, subtract the `num2` number from `num1` - If `num2` is greater, add the numbers together.
+Return the answer.
+Run the function twice, once with the numbers being subtracted, the other with the numbers being added.

@@ -1,22 +1,52 @@
 // 07.03 Lab - START
 
 // Array Callback Methods Review
-// use forEach(), map(), filter(), sort(), find() and reduce() methods to 
+// use forEach(), map(), filter(), sort(), find() and reduce() methods to
 // get and set this data, an array of objects:
 
 let lakersGreats = [
   { team: "Lakers", fName: "Lebron", lName: "James", active: true, pts: 37062 },
-  { team: "Lakers", fName: "Magic", lName: "Johnson", active: false, pts: 17707},
-  { team: "Lakers", fName: "Russell", lName: "Westbrook", active: true, pts: 23298},
-  { team: "Lakers", fName: "Kareem", lName: "Abdul-Jabbar", active: false, pts: 38387},
-  { team: "Lakers", fName: "Anthony", lName: "Davis", active: true, pts: 14390},
-  { team: "Lakers", fName: "Shaquille", lastName: "O'Neal", active: false, pts: 28596}
+  {
+    team: "Lakers",
+    fName: "Magic",
+    lName: "Johnson",
+    active: false,
+    pts: 17707,
+  },
+  {
+    team: "Lakers",
+    fName: "Russell",
+    lName: "Westbrook",
+    active: true,
+    pts: 23298,
+  },
+  {
+    team: "Lakers",
+    fName: "Kareem",
+    lName: "Abdul-Jabbar",
+    active: false,
+    pts: 38387,
+  },
+  {
+    team: "Lakers",
+    fName: "Anthony",
+    lName: "Davis",
+    active: true,
+    pts: 14390,
+  },
+  {
+    team: "Lakers",
+    fName: "Shaquille",
+    lastName: "O'Neal",
+    active: false,
+    pts: 28596,
+  },
 ];
 
 // loop
 // before doing forEach() version, first loop through
-// the lakersGreats array and log all players, including 
-// boolean team.active converted to activeStatus string 
+// the lakersGreats array and log all players, including
+// boolean team.active converted to activeStatus string
 
 // refactor:
 // A. instead of a for-loop, use the forEach method
@@ -27,7 +57,6 @@ let lakersGreats = [
 // A. use arrow => syntax instead of function keyword for callbacks
 // B. ternary instead of if-else, where possible
 //    ternary set equal to variable stores true/false return value
-
 
 // loop
 // before doing filter() version, first loop through
@@ -47,7 +76,7 @@ let lakersGreats = [
 // A. => instead of function keyword
 // B. ternary instead of if-else
 
-// sorting arrays of objects by string and number key 
+// sorting arrays of objects by string and number key
 // 2nd arg can be "name" or "points"
 // the sort is by points
 
@@ -57,10 +86,9 @@ let lakersGreats = [
 //     add comma to points with points.toLocaleString("en-US");
 
 // copy lakersGreats to lakersGreatsCopy
-// use forEach() to add two new properties to each lakersGreatsCopy object: 
+// use forEach() to add two new properties to each lakersGreatsCopy object:
 // fullName and pointsStr
 // use map() to do the same as above, except this time, you get a new array
-
 
 // filter() make a team of only players with at least 25000 pts
 

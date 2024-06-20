@@ -1,35 +1,67 @@
 // 07.03 Lab - FINAL
 
 // Array Callback Methods Review
-// use forEach(), map(), filter(), sort(), find() and reduce() methods to 
+// use forEach(), map(), filter(), sort(), find() and reduce() methods to
 // get and set this data, an array of objects:
 
 let lakersGreats = [
   { team: "Lakers", fName: "Lebron", lName: "James", active: true, pts: 37062 },
-  { team: "Lakers", fName: "Magic", lName: "Johnson", active: false, pts: 17707},
-  { team: "Lakers", fName: "Russell", lName: "Westbrook", active: true, pts: 23298},
-  { team: "Lakers", fName: "Kareem", lName: "Abdul-Jabbar", active: false, pts: 38387},
-  { team: "Lakers", fName: "Anthony", lName: "Davis", active: true, pts: 14390},
-  { team: "Lakers", fName: "Shaquille", lastName: "O'Neal", active: false, pts: 28596}
+  {
+    team: "Lakers",
+    fName: "Magic",
+    lName: "Johnson",
+    active: false,
+    pts: 17707,
+  },
+  {
+    team: "Lakers",
+    fName: "Russell",
+    lName: "Westbrook",
+    active: true,
+    pts: 23298,
+  },
+  {
+    team: "Lakers",
+    fName: "Kareem",
+    lName: "Abdul-Jabbar",
+    active: false,
+    pts: 38387,
+  },
+  {
+    team: "Lakers",
+    fName: "Anthony",
+    lName: "Davis",
+    active: true,
+    pts: 14390,
+  },
+  {
+    team: "Lakers",
+    fName: "Shaquille",
+    lastName: "O'Neal",
+    active: false,
+    pts: 28596,
+  },
 ];
 
 // loop
 // before doing forEach() version, first loop through
-// the lakersGreats array and log all players, including 
-// boolean team.active converted to activeStatus string 
+// the lakersGreats array and log all players, including
+// boolean team.active converted to activeStatus string
 function logPlayerInfo(team) {
-  for(let i = 0; i < team.length; i++) {
+  for (let i = 0; i < team.length; i++) {
     let activeStatus = "";
-    if(item.active == true) {
+    if (item.active == true) {
       activeStatus = "is actively playing";
     } else {
       activeStatus = "is not actively playing";
     }
-    console.log(`${item.fName} ${item.lName} ${activeStatus} for the ${item.team}.`);
+    console.log(
+      `${item.fName} ${item.lName} ${activeStatus} for the ${item.team}.`
+    );
   }
 }
 
-console.log('for loop w if-else:');
+console.log("for loop w if-else:");
 logPlayerInfo(lakersGreats);
 
 // refactor:
@@ -37,18 +69,20 @@ logPlayerInfo(lakersGreats);
 // B. simplify item.active == true to the boolean item.active
 // C. trim if-else by moving "actively playing" to console.log
 function logPlayerInfo(team) {
-  team.forEach(function(item) {
+  team.forEach(function (item) {
     let activeStatus = "";
-    if(item.active) {
+    if (item.active) {
       activeStatus = "is";
     } else {
       activeStatus = "is not";
     }
-    console.log(`${item.fName} ${item.lName} ${activeStatus} actively playing for the ${item.team}.`);
+    console.log(
+      `${item.fName} ${item.lName} ${activeStatus} actively playing for the ${item.team}.`
+    );
   });
 }
 
-console.log('\nforEach function w if-else:');
+console.log("\nforEach function w if-else:");
 logPlayerInfo(lakersGreats);
 
 // refactor again:
@@ -59,13 +93,14 @@ logPlayerInfo(lakersGreats);
 function logPlayerInfo(team) {
   team.forEach((item) => {
     let isActive = item.active ? "is" : "is not";
-    console.log(`${item.fName} ${item.lName} ${isActive} actively playing for the Lakers.`);
+    console.log(
+      `${item.fName} ${item.lName} ${isActive} actively playing for the Lakers.`
+    );
   });
 }
 
-console.log('\nforEach => w ternary:');
+console.log("\nforEach => w ternary:");
 logPlayerInfo(lakersGreats);
-
 
 // loop
 // before doing filter() version, first loop through
@@ -74,11 +109,11 @@ logPlayerInfo(lakersGreats);
 // function expects second argument: "active" or "inactive"
 function getPlayers(team, flag) {
   const players = [];
-  for(let i = 0; i < team.length; i++) {
+  for (let i = 0; i < team.length; i++) {
     let player = team[i];
-    // use ternary to obtain a boolean from flag string "active" 
+    // use ternary to obtain a boolean from flag string "active"
     let isActive = flag == "active" ? true : false;
-    if(player.active == isActive) {
+    if (player.active == isActive) {
       players.push(player);
     }
   }
@@ -86,15 +121,15 @@ function getPlayers(team, flag) {
 }
 
 let activeLakers = getPlayers(lakersGreats, "active");
-console.log('activeLakers: ', activeLakers);
+console.log("activeLakers: ", activeLakers);
 
 let formerLakers = getPlayers(lakersGreats, "inactive");
-console.log('formerLakers: ', formerLakers);
+console.log("formerLakers: ", formerLakers);
 
 // flag arg alternative to "active" does not have to be "inactive"
 // any string besides "active" counts as "inactive"
 let exLakers = getPlayers(lakersGreats, "ex");
-console.log('exLakers: ', exLakers);
+console.log("exLakers: ", exLakers);
 
 // refactor:
 // A. filter() method instead of for loop
@@ -102,22 +137,22 @@ console.log('exLakers: ', exLakers);
 //   two return values: filter method and the filterPlayers function
 function filterPlayers(team, flag) {
   let isActive = "";
-  if(flag == "active") {
-    isActive = true; 
+  if (flag == "active") {
+    isActive = true;
   } else {
     isActive = false;
   }
-  let players = team.filter(function(item) {
+  let players = team.filter(function (item) {
     return item.active == isActive; // isActive is boolean
   });
   return players;
 }
 
-let filteredActivePlayers =  filterPlayers(lakersGreats, "active")
-console.log('filteredPlayers: ', filteredActivePlayers);
+let filteredActivePlayers = filterPlayers(lakersGreats, "active");
+console.log("filteredPlayers: ", filteredActivePlayers);
 
-let filteredInactivePlayers =  filterPlayers(lakersGreats, "inactive")
-console.log('filteredInactivePlayers: ', filteredInactivePlayers);
+let filteredInactivePlayers = filterPlayers(lakersGreats, "inactive");
+console.log("filteredInactivePlayers: ", filteredInactivePlayers);
 
 // refactor again:
 // A. => instead of function keyword
@@ -130,24 +165,25 @@ function filterPlayers(team, flag) {
   return players;
 }
 
-filteredActivePlayers =  filterPlayers(lakersGreats, "active")
-console.log('filteredPlayers: ', filteredActivePlayers);
+filteredActivePlayers = filterPlayers(lakersGreats, "active");
+console.log("filteredPlayers: ", filteredActivePlayers);
 
-filteredInactivePlayers =  filterPlayers(lakersGreats, "inactive")
-console.log('filteredInactivePlayers: ', filteredInactivePlayers);
+filteredInactivePlayers = filterPlayers(lakersGreats, "inactive");
+console.log("filteredInactivePlayers: ", filteredInactivePlayers);
 
-
-// sorting arrays of objects by string and number key 
+// sorting arrays of objects by string and number key
 // 2nd arg can be "name" or "points"
 // the sort is by points
 
 function sortPlayers(team, sortKey) {
-  if(sortKey == "name") { // sort by lastName
+  if (sortKey == "name") {
+    // sort by lastName
     team.sort((a, b) => {
       return a.lName > b.lName ? 1 : -1;
     });
-  } else { // nd arg is anything besides "name", but should be "points"
-    team.sort((a, b) => { 
+  } else {
+    // nd arg is anything besides "name", but should be "points"
+    team.sort((a, b) => {
       // b - a sorts pts by descending. a - b sorts by points ascending
       return b.pts - a.pts;
     });
@@ -164,17 +200,17 @@ console.log("sorted by points: ", sortPlayers(lakersGreats, "points")); // sort 
 //     add comma to points with points.toLocaleString("en-US");
 
 // copy lakersGreats to lakersGreatsCopy
-// use forEach() to add two new properties to each lakersGreatsCopy object: 
+// use forEach() to add two new properties to each lakersGreatsCopy object:
 // fullName and pointsStr
 // use map() to do the same as above, except this time, you get a new array
 
 const lakersGreatsCopy = [...lakersGreats]; // make a copy of the array of objects
 lakersGreatsCopy.forEach((item) => {
   item.fullName = item.firstName + " " + item.lastName;
-  item.ptsStr = item.pts.toLocaleString('en-US');
+  item.ptsStr = item.pts.toLocaleString("en-US");
 });
 
-console.log('team with 2 new properties added by forEach:\n', lakersGreatsCopy);
+console.log("team with 2 new properties added by forEach:\n", lakersGreatsCopy);
 
 const lakersGreatsPlus2 = lakersGreats.map((item) => {
   let player = {};
@@ -182,18 +218,24 @@ const lakersGreatsPlus2 = lakersGreats.map((item) => {
   player.lastName = item.lastName;
   player.fullName = item.firstName + " " + item.lastName;
   player.pts = item.pts;
-  player.pointsStr = item.pts.toLocaleString('en-US');
+  player.pointsStr = item.pts.toLocaleString("en-US");
   return player;
 });
 
-console.log('teamPlus2 with 2 more properties than team made with map():\n', lakersGreatsPlus2);
+console.log(
+  "teamPlus2 with 2 more properties than team made with map():\n",
+  lakersGreatsPlus2
+);
 
 // filter() make a team of only players with at least 25000 pts
 const pts25K = lakersGreatsPlus2.filter((item) => {
   return item.pts >= 25000;
 });
 
-console.log('pts25K with players with at least 25000 pts using filter():\n', pts25K);
+console.log(
+  "pts25K with players with at least 25000 pts using filter():\n",
+  pts25K
+);
 
 // filter() -- less is more!
 // make a team of only players with less than 20000 pts
@@ -202,40 +244,52 @@ console.log('pts25K with players with at least 25000 pts using filter():\n', pts
 // no curly braces for callback
 // no return keyword
 // no semi-colon at end of callback line
-const max20Kpts = lakersGreatsPlus2.filter(item => item.pts < 20000);
+const max20Kpts = lakersGreatsPlus2.filter((item) => item.pts < 20000);
 
-console.log('max20Kpts with players with less than 20000 pts using filter():\n', max20Kpts);
+console.log(
+  "max20Kpts with players with less than 20000 pts using filter():\n",
+  max20Kpts
+);
 
 // reduce()
 // first use a loop to add up all the points
 let totPoints = 0;
-for(let i = 0; i < lakersGreats.length; i++) {
+for (let i = 0; i < lakersGreats.length; i++) {
   totPoints += lakersGreats[i].pts;
 }
 
-console.log('totPoints added up by means of for loop:\n', totPoints.toLocaleString('en-US'));
+console.log(
+  "totPoints added up by means of for loop:\n",
+  totPoints.toLocaleString("en-US")
+);
 
 // use reduce() method to add up all the points
 let totalPoints = lakersGreats.reduce((tot, item) => {
-  return tot += item.pts;
+  return (tot += item.pts);
 }, 0);
 
-console.log('totalPoints added up by reduce():\n', totalPoints.toLocaleString('en-US'));
+console.log(
+  "totalPoints added up by reduce():\n",
+  totalPoints.toLocaleString("en-US")
+);
 
 // more concise syntax: don't need 0 accumulator which is the default datatype
-let totPts = lakersGreats.reduce((tot, e) => tot += e.pts, 0);
+let totPts = lakersGreats.reduce((tot, e) => (tot += e.pts), 0);
 
-console.log('totPts added up by reduce():\n', totPts.toLocaleString('en-US'));
+console.log("totPts added up by reduce():\n", totPts.toLocaleString("en-US"));
 
 // use find() to find the first player with more than 30000 pts
 let first30000pts = lakersGreats.find((item) => {
   return item.pts > 30000;
 });
 
-console.log('first player 30000 pts w find():\n', first30000pts);
+console.log("first player 30000 pts w find():\n", first30000pts);
 
 // use findIndex() to find the index of the first player with less than 20000 pts
 // use more concise syntax
 let less20000PtsIndex = lakersGreats.findIndex((item) => item.pts < 20000);
 
-console.log('first player less than 20000 pts w findIndex():\n', less20000PtsIndex);
+console.log(
+  "first player less than 20000 pts w findIndex():\n",
+  less20000PtsIndex
+);
